@@ -1,0 +1,6 @@
+function getComputerChoice(){
+    
+
+
+    return move; 
+}
