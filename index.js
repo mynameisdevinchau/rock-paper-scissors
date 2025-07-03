@@ -73,4 +73,11 @@ function playGame(rounds){
         console.log("You win! Play again!");
     }
 }
-playGame(3);
+
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button)=>{
+    button.addEventListener("click", () =>{
+        alert(button.id);
+    })
+})
