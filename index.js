@@ -50,13 +50,22 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
+const buttons = document.querySelectorAll("button");
 
 
 function playGame(rounds){
     let computerMove;
     let humanMove;
     for(let i = 0; i < rounds; i++){
-        humanMove=getHumanChoice();
+
+
+        //i'll need to fix this
+        playerSelection = buttons.forEach((button)=>{
+            button.addEventListener("click", () =>{
+                alert(button.id);
+            })
+        })
+        
         computerMove=getComputerChoice();
         
         playRound(humanMove, computerMove);
@@ -74,10 +83,5 @@ function playGame(rounds){
     }
 }
 
-const buttons = document.querySelectorAll("button");
 
-buttons.forEach((button)=>{
-    button.addEventListener("click", () =>{
-        alert(button.id);
-    })
-})
+
