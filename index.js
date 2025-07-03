@@ -13,23 +13,13 @@ function getComputerChoice(){
 }
 
 
-function getHumanChoice(){
-    const buttons = document.querySelectorAll(".but");
-    let move;
-    buttons.forEach(bt=>{
-        bt.addEventListener('click', (e)=>{
-            move = e.target.innerHTML;
-        })
-    })
-    return move;
-}
-
 
 let humanScore = 0;
 let computerScore = 0; 
-function playRound(){
-    let humanChoice = getHumanChoice();
-    let computerChoice = getComputerChoice();
+function playRound(humanChoice){
+    const resultDisplay = document.getElementById("result");
+    const scoreDisplay= document.getElementById("score");
+    const computerChoice = getComputerChoice();
 
     //lowercasing everything and trimming the whitespaces
     if(humanChoice == computerChoice){
@@ -56,13 +46,8 @@ function playRound(){
     else{
         console.log("Please enter a valid move: 'rock', 'paper', or, 'scissors'");
     }
-}
 
 
-
-function playGame(){
-    let computerMove;
-    let humanMove;
     console.log(`Your score is ${humanScore} and the computer score is ${computerScore}`);
     if(humanScore == computerScore){
         console.log("Tie game! Try again!");
@@ -76,5 +61,10 @@ function playGame(){
 }
 
 
-playRound();
 
+document.querySelectorAll(".but").forEach(button => {
+    button.addEventListener("click", () => {
+        const humanChoice = button.textContent.trim().toLowerCase();
+        playRound(humanChoice);
+    });
+});
