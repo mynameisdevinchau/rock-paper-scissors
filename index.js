@@ -59,12 +59,7 @@ function playGame(rounds){
     for(let i = 0; i < rounds; i++){
 
 
-        //i'll need to fix this
-        playerSelection = buttons.forEach((button)=>{
-            button.addEventListener("click", () =>{
-                alert(button.id);
-            })
-        })
+     
         
         computerMove=getComputerChoice();
         
