@@ -17,11 +17,10 @@ function getComputerChoice(){
 let humanScore = 0;
 let computerScore = 0; 
 function playRound(humanChoice){
-    const resultDisplay = document.getElementById("result");
-    const scoreDisplay= document.getElementById("score");
-    const computerChoice = getComputerChoice();
+    let scoreDisplay= document.getElementById("score");
+    scoreDisplay.textContent = "Score: " + humanScore + " - " + computerScore;
 
-    //lowercasing everything and trimming the whitespaces
+    const computerChoice = getComputerChoice();
     if(humanChoice == computerChoice){
         console.log("It is a tie!");
     } else if(humanChoice == 'rock' && computerChoice == 'paper'){
